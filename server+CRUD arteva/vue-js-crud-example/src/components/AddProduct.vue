@@ -1,8 +1,9 @@
 <template>
   <div class="submit-form">
     <div v-if="!submitted">
+
       <div class="form-group">
-        <label for="name">name</label>
+        <label for="name">Nombre</label>
         <input
           type="text"
           class="form-control"
@@ -14,7 +15,7 @@
       </div>
 
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description">Descripcion</label>
         <input
           class="form-control"
           id="description"
@@ -24,12 +25,67 @@
         />
       </div>
 
+      <div class="form-group">
+        <label for="price">Precio</label>
+        <input
+          class="form-control"
+          id="price"
+          required
+          v-model="product.price"
+          name="price"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="type">Tipo</label>
+        <input
+          class="form-control"
+          id="type"
+          required
+          v-model="product.type"
+          name="type"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="img">Imagen</label>
+        <input
+          class="form-control"
+          id="img"
+          required
+          v-model="product.img"
+          name="img"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="material">Material</label>
+        <input
+          class="form-control"
+          id="material"
+          required
+          v-model="product.material"
+          name="material"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="size">Tamaño</label>
+        <input
+          class="form-control"
+          id="size"
+          required
+          v-model="product.size"
+          name="size"
+        />
+      </div>
+<br>
       <button @click="saveProduct" class="btn btn-success">Submit</button>
     </div>
 
     <div v-else>
-      <h4>You submitted successfully!</h4>
-      <button class="btn btn-success" @click="newProduct">Add</button>
+      <h4>El producto se ha añadido correctamente!</h4>
+      <button class="btn btn-success" @click="newProduct">Volver</button>
     </div>
   </div>
 </template>
@@ -45,6 +101,11 @@ export default {
         id: null,
         name: "",
         description: "",
+        price: "",
+        type: "",
+        material: "",
+        size: "",
+        img: "",
         published: false
       },
       submitted: false
@@ -54,7 +115,12 @@ export default {
     saveProduct() {
       var data = {
         name: this.product.name,
-        description: this.product.description
+        description: this.product.description,
+        price: this.product.price,
+        type: this.product.type,
+        material: this.product.material,
+        size: this.product.size,
+        img: this.product.img,
       };
 
       ProductDataService.create(data)

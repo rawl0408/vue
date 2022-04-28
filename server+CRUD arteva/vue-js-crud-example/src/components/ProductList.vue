@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="col-md-6">
-      <h4>Products List</h4>
+      <h4>Lista de productos</h4>
 
       <ul class="list-group">
 
@@ -41,14 +41,14 @@
           
         </li>
       </ul>
-
+<!-- 
       <button class="m-3 btn btn-sm btn-danger" @click="removeAllProducts">
         Remove All
-      </button>
+      </button> -->
     </div>
-    <div class="col-md-6">
-      <div v-if="currentProduct">
-        <h4>Product</h4>
+    <div class="col-md-6 fixed">
+      <div  v-if="currentProduct">
+        <h4>Producto</h4>
 
         <div>
           <label><strong>Nombre:</strong></label> {{ currentProduct.name }}
@@ -73,21 +73,24 @@
           <label><strong>Material:</strong></label>
           {{ currentProduct.material }}
         </div>
+
+        <div>
+          <label><strong>Talla:</strong></label>
+          {{ currentProduct.size }}
+        </div>
 <br>
         <div>
           <label><strong>Status:</strong></label>
           {{ currentProduct.published ? "Published" : "Pending" }}
         </div>
 
-        <router-link
-          :to="'/products/' + currentProduct.id"
-          class="badge badge-warning"
-          >Edit</router-link
-        >
+        <router-link :to="'/products/' + currentProduct.id" class="m-3 btn btn-sm btn-warning">Edit</router-link>
+        
+        
       </div>
       <div v-else>
         <br />
-        <p>Please click on a Product...</p>
+        <p>Selecciona un producto</p>
       </div>
     </div>
   </div>
@@ -154,6 +157,7 @@ export default {
   },
   mounted() {
     this.retrieveProducts();
+    
   },
 };
 </script>
@@ -163,5 +167,12 @@ export default {
   text-align: left;
   max-width: 750px;
   margin: auto;
+}
+
+.fixed {
+  position: fixed;
+  right: 0;
+  top: 15%;
+  
 }
 </style>
