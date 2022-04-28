@@ -173,6 +173,6 @@ export default {
   position: fixed;
   right: 0;
   top: 15%;
-  
+  /* PODEMOS HACER QUE MAXIMO SEA EN TAMAÑO X Y SE APLIQUE A PANTALLA GRANDE */
 }
 </style>
