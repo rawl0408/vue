@@ -119,16 +119,9 @@
       "material": "Plata",
       "size": "L",
       "img": "http://localhost:3000/assets/img/imgShop/pulsera-flores-001.jpg"
-    },
-    {
-      "name": "Collar coral rosa",
-      "description": "Collar rosa de corales rosados y plata",
-      "price": 95,
-      "type": "Collar",
-      "material": "Plata",
-      "size": "20",
-      "img": "https://i.etsystatic.com/8007504/r/il/6aba4c/3385154952/il_794xN.3385154952_7foc.jpg",
-      "id": 15
     }
-  ]
+  ],
+
+  "carrito" : []
 }
+
